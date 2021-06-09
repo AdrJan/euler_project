@@ -6,7 +6,7 @@
 # source - https://projecteuler.net/problem=3
 
 
-def get_max_prime_factor(val):
+def get_prime_factors(val):
     prime_factors = []
     divisor = 2
     while val > 1:
@@ -15,8 +15,12 @@ def get_max_prime_factor(val):
             val //= divisor
         else:
             divisor += 1
-    
-    return max(prime_factors)
+
+    return prime_factors
+
+
+def get_max_prime_factor(val):
+    return max(get_prime_factors(val))
 
 
 # TEST
